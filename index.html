@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Khushi Consultancy – Premium taxation and financial advisory for startups, SMEs, corporates, NRIs and HNIs. GST, Income Tax, M&A, International Taxation.">
+<meta name="keywords" content="taxation consulting India, GST advisory, international taxation, M&A advisory, income tax consultant, NRI tax advisory, financial advisory India">
+<meta property="og:title" content="Khushi Consultancy | Taxation & Financial Advisory">
+<meta property="og:description" content="Premier taxation and financial advisory for India's most ambitious businesses. GST, Income Tax, M&A, International Taxation.">
+<meta property="og:type" content="website">
+<title>Khushi Consultancy | Taxation & Financial Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#001F3F;
+  --navy-mid:#002D5A;
+  --navy-light:#003D7A;
+  --gold:#C9A84C;
+  --gold-light:#E8C97E;
+  --gold-pale:#F7EDD8;
+  --white:#FFFFFF;
+  --off-white:#F8F7F4;
+  --text-body:#3A3A3A;
+  --text-muted:#6B6B6B;
+  --border:#E2DDD6;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--text-body);background:var(--white);line-height:1.6;font-size:15px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,31,63,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2);transition:all 0.3s;}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,#C9A84C,#E8C97E);border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:18px;color:#001F3F;}
+.logo-text{color:#FFFFFF;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;letter-spacing:0.03em;line-height:1.1;}
+.logo-sub{color:#C9A84C;font-family:'Inter',sans-serif;font-size:0.6rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:0.25rem;}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.8rem;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;padding:0.5rem 0.85rem;border-radius:2px;transition:color 0.2s,background 0.2s;}
+.nav-links a:hover{color:#E8C97E;background:rgba(201,168,76,0.08);}
+.nav-cta{background:#C9A84C!important;color:#001F3F!important;font-weight:600!important;padding:0.5rem 1.2rem!important;border-radius:2px!important;}
+.nav-cta:hover{background:#E8C97E!important;color:#001F3F!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:1.5px;background:#FFFFFF;transition:all 0.3s;}
+
+/* HERO */
+#home{padding-top:68px;}
+.hero{min-height:calc(100vh - 68px);background:#001F3F;display:flex;align-items:center;position:relative;overflow:hidden;}
+.hero-bg-pattern{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-accent{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:600px;height:600px;border:1px solid rgba(201,168,76,0.08);border-radius:50%;}
+.hero-accent2{position:absolute;right:-180px;top:50%;transform:translateY(-50%);width:780px;height:780px;border:1px solid rgba(201,168,76,0.04);border-radius:50%;}
+.hero-inner{max-width:1200px;margin:0 auto;padding:4rem 2rem;position:relative;z-index:1;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;color:#C9A84C;font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.5rem;}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:28px;height:1px;background:#C9A84C;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:600;color:#FFFFFF;line-height:1.1;max-width:700px;margin-bottom:1.5rem;}
+.hero h1 em{font-style:normal;color:#C9A84C;}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.65);max-width:520px;line-height:1.8;margin-bottom:2.5rem;font-weight:300;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;}
+.btn-primary{background:#C9A84C;color:#001F3F;text-decoration:none;padding:0.85rem 2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.25s;border:none;cursor:pointer;display:inline-block;}
+.btn-primary:hover{background:#E8C97E;transform:translateY(-1px);}
+.btn-outline{background:transparent;color:#FFFFFF;text-decoration:none;padding:0.85rem 2rem;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border-radius:2px;border:1px solid rgba(255,255,255,0.25);transition:all 0.25s;display:inline-block;}
+.btn-outline:hover{border-color:#C9A84C;color:#C9A84C;}
+.hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;}
+.stat-item{text-align:left;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:#C9A84C;line-height:1;}
+.stat-label{font-size:0.7rem;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px;}
+
+/* SECTIONS */
+.section{padding:5rem 0;}
+.section-inner{max-width:1200px;margin:0 auto;padding:0 2rem;}
+.section-eyebrow{font-size:0.65rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#C9A84C;margin-bottom:0.75rem;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:600;color:#001F3F;line-height:1.15;margin-bottom:1rem;}
+.section-lead{font-size:0.95rem;color:#6B6B6B;max-width:560px;line-height:1.8;}
+.section-header{margin-bottom:3.5rem;}
+
+/* SERVICES */
+#services{background:#F8F7F4;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5px;background:#E2DDD6;}
+.service-card{background:#FFFFFF;padding:2.5rem 2rem;position:relative;overflow:hidden;transition:all 0.3s;cursor:pointer;}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:#C9A84C;transform:scaleX(0);transition:transform 0.3s;transform-origin:left;}
+.service-card:hover::after{transform:scaleX(1);}
+.service-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,31,63,0.08);}
+.service-icon{width:48px;height:48px;border:1px solid rgba(201,168,76,0.3);border-radius:2px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;font-size:1.2rem;}
+.service-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#001F3F;margin-bottom:0.75rem;line-height:1.2;}
+.service-card p{font-size:0.85rem;color:#6B6B6B;line-height:1.8;}
+.service-link{display:inline-flex;align-items:center;gap:6px;margin-top:1.25rem;font-size:0.75rem;font-weight:600;color:#C9A84C;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:gap 0.2s;}
+.service-link:hover{gap:10px;}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.why-visual{background:#001F3F;border-radius:3px;padding:3rem 2.5rem;position:relative;overflow:hidden;}
+.why-visual-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.05) 1px,transparent 1px);background-size:40px 40px;}
+.why-visual-inner{position:relative;z-index:1;}
+.why-quote{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;color:#FFFFFF;line-height:1.4;margin-bottom:1.5rem;}
+.why-quote em{font-style:normal;color:#C9A84C;}
+.why-quote-attr{font-size:0.75rem;color:rgba(255,255,255,0.45);letter-spacing:0.1em;text-transform:uppercase;}
+
+/* INDUSTRIES */
+#industries{background:#001F3F;}
+#industries .section-title{color:#FFFFFF;}
+.industries-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:rgba(201,168,76,0.15);}
+.industry-item{background:rgba(0,31,63,0.8);padding:2rem 1.5rem;text-align:center;transition:background 0.3s;cursor:default;}
+.industry-item:hover{background:rgba(201,168,76,0.08);}
+.industry-icon{font-size:1.6rem;margin-bottom:0.75rem;display:block;}
+.industry-item h4{font-size:0.85rem;font-weight:500;color:rgba(255,255,255,0.85);letter-spacing:0.03em;}
+
+/* TESTIMONIALS */
+#testimonials{background:#F8F7F4;}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;}
+.testimonial-card{background:#FFFFFF;padding:2.5rem;border-left:3px solid #C9A84C;}
+.testimonial-quote{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:#001F3F;line-height:1.7;margin-bottom:1.5rem;}
+.testimonial-meta{display:flex;align-items:center;gap:12px;}
+.testimonial-avatar{width:40px;height:40px;background:#001F3F;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:#C9A84C;flex-shrink:0;}
+.testimonial-name{font-size:0.85rem;font-weight:600;color:#001F3F;}
+.testimonial-role{font-size:0.75rem;color:#6B6B6B;margin-top:2px;}
+.stars{color:#C9A84C;font-size:0.75rem;letter-spacing:2px;margin-bottom:1rem;}
+
+/* NEWS */
+.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
+.news-card{border-bottom:1px solid #E2DDD6;padding-bottom:1.5rem;}
+.news-tag{display:inline-block;font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#C9A84C;background:#F7EDD8;padding:3px 10px;border-radius:2px;margin-bottom:0.75rem;}
+.news-card h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#001F3F;line-height:1.35;margin-bottom:0.5rem;}
+.news-card p{font-size:0.82rem;color:#6B6B6B;line-height:1.7;}
+.news-date{font-size:0.7rem;color:#6B6B6B;margin-top:0.75rem;letter-spacing:0.05em;}
+
+/* CTA STRIP */
+.cta-strip{background:#001F3F;padding:5rem 0;position:relative;overflow:hidden;}
+.cta-strip-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:50px 50px;}
+.cta-strip-inner{max-width:800px;margin:0 auto;padding:0 2rem;text-align:center;position:relative;z-index:1;}
+.cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;color:#FFFFFF;margin-bottom:1rem;line-height:1.15;}
+.cta-strip h2 em{font-style:normal;color:#C9A84C;}
+.cta-strip p{color:rgba(255,255,255,0.6);font-size:0.95rem;margin-bottom:2rem;line-height:1.8;}
+
+/* CONTACT */
+#contact{background:#F8F7F4;}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;}
+.contact-info h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#001F3F;margin-bottom:1.5rem;}
+.contact-detail{display:flex;gap:12px;align-items:flex-start;margin-bottom:1.5rem;}
+.contact-detail-icon{width:38px;height:38px;min-width:38px;background:#001F3F;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:#C9A84C;}
+.contact-detail h5{font-size:0.75rem;font-weight:600;color:#6B6B6B;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3px;}
+.contact-detail p{font-size:0.88rem;color:#3A3A3A;line-height:1.6;}
+.contact-form{background:#FFFFFF;padding:2.5rem;border-radius:2px;}
+.contact-form h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#001F3F;margin-bottom:1.5rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:0;}
+.form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:1rem;}
+.form-group label{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#6B6B6B;}
+.form-group input,.form-group select,.form-group textarea{padding:0.75rem 1rem;border:1px solid #E2DDD6;border-radius:2px;font-size:0.88rem;font-family:'Inter',sans-serif;color:#3A3A3A;background:#FFFFFF;transition:border 0.2s;outline:none;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#C9A84C;}
+.form-group textarea{resize:vertical;min-height:100px;}
+.btn-submit{width:100%;background:#001F3F;color:#FFFFFF;border:none;padding:1rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:background 0.25s;}
+.btn-submit:hover{background:#002D5A;}
+
+/* FOOTER */
+footer{background:#000D1A;padding:3.5rem 0 2rem;}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 2rem;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.07);}
+.footer-brand p{font-size:0.82rem;color:rgba(255,255,255,0.4);line-height:1.8;max-width:260px;margin-top:1rem;}
+.footer-col h5{font-size:0.7rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C;margin-bottom:1rem;}
+.footer-col a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:0.5rem;transition:color 0.2s;}
+.footer-col a:hover{color:#E8C97E;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;font-size:0.75rem;color:rgba(255,255,255,0.3);}
+
+/* MOBILE MENU */
+.mobile-menu{display:none;position:fixed;inset:0;background:#001F3F;z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:#FFFFFF;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:500;transition:color 0.2s;}
+.mobile-menu a:hover{color:#C9A84C;}
+.mobile-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:#FFFFFF;font-size:1.5rem;cursor:pointer;}
+
+/* BOOKING MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,13,26,0.85);z-index:2000;align-items:center;justify-content:center;padding:1rem;}
+.modal-overlay.open{display:flex;}
+.modal{background:#FFFFFF;max-width:500px;width:100%;border-radius:3px;padding:2.5rem;position:relative;max-height:90vh;overflow-y:auto;}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.2rem;cursor:pointer;color:#6B6B6B;}
+.modal h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#001F3F;margin-bottom:0.5rem;}
+.modal > p{font-size:0.85rem;color:#6B6B6B;margin-bottom:1.5rem;}
+.slot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.25rem;}
+.slot-btn{background:#F8F7F4;border:1px solid #E2DDD6;border-radius:2px;padding:0.6rem;font-size:0.78rem;cursor:pointer;transition:all 0.2s;color:#3A3A3A;}
+.slot-btn:hover,.slot-btn.selected{background:#001F3F;color:#FFFFFF;border-color:#001F3F;}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+/* WHY CARDS */
+.why-card{background:#FFFFFF;padding:2rem;border-bottom:3px solid #C9A84C;}
+.why-card-icon{width:36px;height:36px;border:1px solid rgba(201,168,76,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.9rem;margin-bottom:1rem;}
+.why-card h4{font-size:0.95rem;font-weight:600;color:#001F3F;margin-bottom:0.25rem;}
+.why-card p{font-size:0.83rem;color:#6B6B6B;line-height:1.7;}
+
+/* ABOUT STATS */
+.about-stat{border-top:1px solid rgba(201,168,76,0.3);padding-top:1rem;}
+.about-stat-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#C9A84C;font-weight:600;}
+.about-stat-label{font-size:0.7rem;color:rgba(255,255,255,0.45);letter-spacing:0.08em;text-transform:uppercase;margin-top:4px;}
+
+/* SUCCESS MESSAGE */
+.success-msg{background:#F0FAF0;border:1px solid #4CAF50;color:#2E7D32;padding:1rem;border-radius:2px;font-size:0.88rem;margin-top:0.5rem;display:none;}
+
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .why-grid,.contact-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .form-row{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .hero-stats{gap:2rem;}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center;}
+  .hero-actions{flex-direction:column;align-items:flex-start;}
+}
+
+/* Structured data */
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Khushi Consultancy",
+  "description": "Premium taxation and financial advisory for startups, SMEs, corporates, NRIs and HNIs.",
+  "url": "https://khushiconsultancy.in",
+  "telephone": "+91-79-2680-5000",
+  "email": "advisory@khushiconsultancy.in",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "501, Titanium Square, Thaltej",
+    "addressLocality": "Ahmedabad",
+    "addressRegion": "Gujarat",
+    "postalCode": "380054",
+    "addressCountry": "IN"
+  },
+  "openingHours": ["Mo-Fr 09:30-18:30", "Sa 10:00-14:00"],
+  "serviceArea": {"@type": "Country", "name": "India"},
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Tax Advisory Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Income Tax Advisory"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "GST Advisory"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "M&A Taxation"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "International Taxation"}}
+    ]
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
+  <button class="mobile-close" onclick="closeMobile()" aria-label="Close menu">✕</button>
+  <a href="#home" onclick="closeMobile()">Home</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#insights" onclick="closeMobile()">Insights</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="#" class="btn-primary" onclick="openModal();closeMobile();return false;">Book Consultation</a>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-label="Book a consultation">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close booking modal">✕</button>
+    <h2>Book a Consultation</h2>
+    <p>Schedule a confidential session with our senior advisors. We will confirm within 2 business hours.</p>
+    <div class="form-group">
+      <label for="bk-name">Your Full Name</label>
+      <input type="text" id="bk-name" placeholder="Arjun Mehta" autocomplete="name">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="bk-phone">Phone</label>
+        <input type="tel" id="bk-phone" placeholder="+91 98000 00000" autocomplete="tel">
+      </div>
+      <div class="form-group">
+        <label for="bk-email">Email</label>
+        <input type="email" id="bk-email" placeholder="you@company.com" autocomplete="email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="bk-service">Service Area</label>
+      <select id="bk-service">
+        <option>Income Tax Advisory</option>
+        <option>GST Advisory</option>
+        <option>M&amp;A Taxation</option>
+        <option>International Taxation</option>
+        <option>General Advisory</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Preferred Time Slot</label>
+    </div>
+    <div class="slot-grid" id="slotGrid"></div>
+    <div class="form-group">
+      <label for="bk-notes">Brief Note (optional)</label>
+      <textarea id="bk-notes" placeholder="Describe your advisory need in a few words..." style="min-height:70px;"></textarea>
+    </div>
+    <button class="btn-submit" onclick="confirmBooking()">Confirm Booking →</button>
+    <div class="success-msg" id="bookingSuccess">✓ Booking received! Our team will reach you within 2 business hours.</div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#home" class="logo" aria-label="Khushi Consultancy home">
+      <div class="logo-mark" aria-hidden="true">K</div>
+      <div>
+        <div class="logo-text">Khushi Consultancy</div>
+        <div class="logo-sub">Taxation &amp; Financial Advisory</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="nav-cta" onclick="openModal();return false;">Book Consultation</a>
+    </div>
+    <button class="hamburger" onclick="openMobile()" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" aria-label="Hero">
+  <div class="hero">
+    <div class="hero-bg-pattern" aria-hidden="true"></div>
+    <div class="hero-accent" aria-hidden="true"></div>
+    <div class="hero-accent2" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Trusted Advisory Since 2010</div>
+      <h1>Where <em>Precision</em> Meets<br>Financial Clarity</h1>
+      <p class="hero-sub">Premier taxation and financial advisory for India's most ambitious businesses. From GST compliance to cross-border structuring, we deliver counsel that moves at the speed of your ambition.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary" onclick="openModal();return false;">Book a Consultation</a>
+        <a href="#services" class="btn-outline">Explore Services</a>
+      </div>
+      <div class="hero-stats" role="list" aria-label="Key statistics">
+        <div class="stat-item" role="listitem">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Clients Served</div>
+        </div>
+        <div class="stat-item" role="listitem">
+          <div class="stat-num">₹12B+</div>
+          <div class="stat-label">Tax Savings Delivered</div>
+        </div>
+        <div class="stat-item" role="listitem">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Years of Excellence</div>
+        </div>
+        <div class="stat-item" role="listitem">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Client Retention</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section" aria-labelledby="about-heading">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div class="fade-up">
+        <div class="section-eyebrow">About Khushi Consultancy</div>
+        <h2 class="section-title" id="about-heading">Advisors Who Think Ahead, Not Just Comply</h2>
+        <p style="font-size:0.93rem;color:#6B6B6B;line-height:1.85;margin-bottom:1.5rem;">Founded in 2010, Khushi Consultancy has grown from a boutique tax practice into one of India's most respected independent advisory firms. We serve startups navigating their first GST registration, multinationals structuring cross-border acquisitions, and HNIs protecting generational wealth.</p>
+        <p style="font-size:0.93rem;color:#6B6B6B;line-height:1.85;margin-bottom:2rem;">Our philosophy is simple: compliance is the floor, not the ceiling. Every engagement is a chance to find structural advantage within the law.</p>
+        <a href="#services" class="btn-primary">Our Services</a>
+      </div>
+      <div class="why-visual fade-up">
+        <div class="why-visual-bg" aria-hidden="true"></div>
+        <div class="why-visual-inner">
+          <blockquote class="why-quote">"We don't just file returns. We build <em>tax architectures</em> that survive scrutiny and enable growth."</blockquote>
+          <div class="why-quote-attr">— Founding Partner, Khushi Consultancy</div>
+          <div style="margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+            <div class="about-stat">
+              <div class="about-stat-num">CA + LL.B</div>
+              <div class="about-stat-label">Dual Qualified Advisors</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-num">DPIIT</div>
+              <div class="about-stat-label">Startup Recognised</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section" aria-labelledby="services-heading">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Our Practice Areas</div>
+      <h2 class="section-title" id="services-heading">Comprehensive Advisory Across All Tax Domains</h2>
+      <p class="section-lead">Four specialist practices, one integrated perspective — from day-to-day compliance to complex cross-border transactions.</p>
+    </div>
+    <div class="services-grid fade-up" role="list">
+      <article class="service-card" role="listitem">
+        <div class="service-icon" aria-hidden="true">📊</div>
+        <h3>Income Tax Advisory</h3>
+        <p>Strategic tax planning for individuals, HUFs, partnerships and corporates. Tax-efficient structuring, litigation support, and proactive planning to reduce effective tax rates within lawful bounds.</p>
+        <a href="#contact" class="service-link">Enquire about this service →</a>
+      </article>
+      <article class="service-card" role="listitem">
+        <div class="service-icon" aria-hidden="true">🧾</div>
+        <h3>GST Advisory</h3>
+        <p>End-to-end GST lifecycle management: registration, classification, input credit optimization, returns filing, refund claims, and representation before GST authorities at all levels.</p>
+        <a href="#contact" class="service-link">Enquire about this service →</a>
+      </article>
+      <article class="service-card" role="listitem">
+        <div class="service-icon" aria-hidden="true">🤝</div>
+        <h3>M&amp;A Taxation</h3>
+        <p>Tax due diligence, deal structuring, stamp duty optimization, and post-merger integration advisory. We protect deal value from term sheet through closing and beyond.</p>
+        <a href="#contact" class="service-link">Enquire about this service →</a>
+      </article>
+      <article class="service-card" role="listitem">
+        <div class="service-icon" aria-hidden="true">🌐</div>
+        <h3>International Taxation</h3>
+        <p>DTAA interpretation, transfer pricing, FEMA compliance, NRI advisory, BEPS structuring, and inbound/outbound investment optimization for cross-border businesses.</p>
+        <a href="#contact" class="service-link">Enquire about this service →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why" class="section" style="background:#F8F7F4;" aria-labelledby="why-heading">
+  <div class="section-inner">
+    <div class="section-header fade-up" style="text-align:center;">
+      <div class="section-eyebrow">Why Khushi Consultancy</div>
+      <h2 class="section-title" id="why-heading">Our Difference Is Measurable</h2>
+    </div>
+    <div class="fade-up" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;">
+      <div class="why-card">
+        <div class="why-card-icon" aria-hidden="true">⚖️</div>
+        <h4>Legally Aggressive, Never Reckless</h4>
+        <p>We identify positions that withstand departmental scrutiny. Every position is documented, defensible, and designed to hold.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon" aria-hidden="true">🎯</div>
+        <h4>Partner-Led Engagements</h4>
+        <p>Every client engagement is led by a senior partner. No junior associates managing your compliance. Direct access, always.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon" aria-hidden="true">📱</div>
+        <h4>Technology-Enabled Compliance</h4>
+        <p>Automated compliance calendars, real-time trackers, and digital document management so nothing falls through the cracks.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon" aria-hidden="true">🌏</div>
+        <h4>Cross-Border Expertise</h4>
+        <p>Registered with ICAI and affiliated with international networks. We handle multi-jurisdiction structures with equal fluency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries" class="section" aria-labelledby="industries-heading">
+  <div class="section-inner">
+    <div class="section-header fade-up" style="text-align:center;">
+      <div class="section-eyebrow" style="color:#C9A84C;">Industries We Serve</div>
+      <h2 class="section-title" id="industries-heading">Built for Every Stage, Every Sector</h2>
+    </div>
+    <div class="industries-grid fade-up" role="list">
+      <div class="industry-item" role="listitem"><span class="industry-icon" aria-hidden="true">🚀</span><h4>Startups &amp; Founders</h4></div>
+      <div class="industry-item" role="listitem"><span class="industry-icon" aria-hidden="true">🏭</span><h4>Manufacturing &amp; SMEs</h4></div>
+      <div class="industry-item" role="listitem"><span class="industry-icon" aria-hidden="true">🏢</span><h4>Listed Corporates</h4></div>
+      <div class="industry-item" role="listitem"><span class="industry-icon" aria-hidden="true">🌍</span><h4>NRIs &amp; Diaspora</h4></div>
+      <div class="industry-item" role="listitem"><span class="industry-icon" aria-hidden="true">💼</span><h4>International Business</h4></div>
+      <div class="industry-item" role="listitem"><span class="industry-icon" aria-hidden="true">💎</span><h4>High-Net-Worth Individuals</h4></div>
+      <div class="industry-item" role="listitem"><span class="industry-icon" aria-hidden="true">🏦</span><h4>Financial Services</h4></div>
+      <div class="industry-item" role="listitem"><span class="industry-icon" aria-hidden="true">⚕️</span><h4>Healthcare &amp; Pharma</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section" aria-labelledby="testimonials-heading">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Client Testimonials</div>
+      <h2 class="section-title" id="testimonials-heading">Trusted by Those Who Demand More</h2>
+    </div>
+    <div class="testimonials-grid fade-up" role="list">
+      <article class="testimonial-card" role="listitem">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-quote">"Khushi Consultancy restructured our holding company in a way that saved us nearly ₹4.5 crore in tax across two financial years. Their grasp of M&amp;A taxation is genuinely exceptional."</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar" aria-hidden="true">RS</div>
+          <div>
+            <div class="testimonial-name">Rajiv Sharma</div>
+            <div class="testimonial-role">CFO, TechNova Ventures, Bangalore</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card" role="listitem">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-quote">"As an NRI managing properties across three cities, I needed someone who truly understood FEMA, income tax, and repatriation rules together. They did, and my peace of mind is worth every rupee."</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar" aria-hidden="true">PM</div>
+          <div>
+            <div class="testimonial-name">Priya Menon</div>
+            <div class="testimonial-role">NRI Client, Dubai</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card" role="listitem">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-quote">"Our GST refund of ₹1.2 crore was stuck for 8 months before Khushi took over. They resolved it in 6 weeks. Professional, persistent, and extremely well-connected with the right people."</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar" aria-hidden="true">AK</div>
+          <div>
+            <div class="testimonial-name">Ankit Kapoor</div>
+            <div class="testimonial-role">Director, Kapoor Exports Pvt. Ltd.</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section id="insights" class="section" style="background:#F8F7F4;" aria-labelledby="insights-heading">
+  <div class="section-inner">
+    <div class="section-header fade-up" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="section-eyebrow">Insights &amp; Articles</div>
+        <h2 class="section-title" id="insights-heading">Latest from Our Desk</h2>
+      </div>
+      <a href="#contact" class="btn-outline" style="color:#001F3F;border-color:#001F3F;white-space:nowrap;font-size:0.75rem;">View All Articles →</a>
+    </div>
+    <div class="news-grid fade-up" role="list">
+      <article class="news-card" role="listitem">
+        <span class="news-tag">GST</span>
+        <h4>ITC Reversal Under Rule 42: New Circular Clarification and Its Impact</h4>
+        <p>CBIC's latest circular changes how proportionate ITC reversal is calculated for mixed-supply businesses. Here is what you need to act on before the next return cycle.</p>
+        <div class="news-date">June 5, 2026</div>
+      </article>
+      <article class="news-card" role="listitem">
+        <span class="news-tag">International Tax</span>
+        <h4>India-UAE DTAA: Updated Residency Clauses and NRI Planning Opportunities</h4>
+        <p>The renegotiated treaty introduces new tie-breaker tests and limits certain exemptions. NRIs must review their residential status carefully before September 30.</p>
+        <div class="news-date">May 28, 2026</div>
+      </article>
+      <article class="news-card" role="listitem">
+        <span class="news-tag">M&amp;A</span>
+        <h4>SEBI's New Takeover Regulations: Tax Consequences for Acquirers</h4>
+        <p>Amended SEBI takeover rules create unintended stamp duty and capital gains implications for open offer triggers. Structuring deals in the current cycle requires extra care.</p>
+        <div class="news-date">May 14, 2026</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="cta-strip" aria-label="Consultation call to action">
+  <div class="cta-strip-bg" aria-hidden="true"></div>
+  <div class="cta-strip-inner fade-up">
+    <div class="section-eyebrow" style="display:flex;justify-content:center;color:#C9A84C;">Take the First Step</div>
+    <h2>Your Tax Strategy Deserves <em>Expert</em> Attention</h2>
+    <p>Whether you are a founder structuring your first raise, an NRI rationalizing your India holdings, or a CFO navigating a cross-border acquisition — a conversation costs nothing.</p>
+    <button class="btn-primary" onclick="openModal()">Book a Free Consultation</button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section" aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Get in Touch</div>
+      <h2 class="section-title" id="contact-heading">Reach Our Advisory Team</h2>
+    </div>
+    <div class="contact-grid fade-up">
+      <div class="contact-info">
+        <h3>We would like to hear from you</h3>
+        <div class="contact-detail">
+          <div class="contact-detail-icon" aria-hidden="true">📍</div>
+          <div>
+            <h5>Office Address</h5>
+            <p>501, Titanium Square, Thaltej,<br>Ahmedabad – 380054, Gujarat, India</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon" aria-hidden="true">📞</div>
+          <div>
+            <h5>Phone</h5>
+            <p><a href="tel:+917926805000" style="color:inherit;text-decoration:none;">+91 79 2680 5000</a><br>
+            <a href="tel:+919825000000" style="color:inherit;text-decoration:none;">+91 98250 00000</a></p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon" aria-hidden="true">✉️</div>
+          <div>
+            <h5>Email</h5>
+            <p><a href="mailto:advisory@khushiconsultancy.in" style="color:inherit;text-decoration:none;">advisory@khushiconsultancy.in</a><br>
+            <a href="mailto:nri@khushiconsultancy.in" style="color:inherit;text-decoration:none;">nri@khushiconsultancy.in</a></p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon" aria-hidden="true">🕐</div>
+          <div>
+            <h5>Office Hours</h5>
+            <p>Monday – Friday: 9:30 AM – 6:30 PM IST<br>Saturday: 10:00 AM – 2:00 PM IST</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="c-fname">First Name</label>
+            <input type="text" id="c-fname" placeholder="Arjun" autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="c-lname">Last Name</label>
+            <input type="text" id="c-lname" placeholder="Mehta" autocomplete="family-name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="c-email">Email</label>
+            <input type="email" id="c-email" placeholder="arjun@company.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="c-phone">Phone</label>
+            <input type="tel" id="c-phone" placeholder="+91 98000 00000" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="c-type">Client Type</label>
+          <select id="c-type">
+            <option>Corporate / Business</option>
+            <option>NRI</option>
+            <option>Startup / Founder</option>
+            <option>High-Net-Worth Individual</option>
+            <option>International Business</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="c-message">Message</label>
+          <textarea id="c-message" placeholder="Briefly describe your advisory need..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="submitContact()">Send Message →</button>
+        <div class="success-msg" id="contactSuccess">✓ Message received! We will respond within one business day.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#home" class="logo" aria-label="Khushi Consultancy home">
+          <div class="logo-mark" aria-hidden="true">K</div>
+          <div>
+            <div class="logo-text">Khushi Consultancy</div>
+            <div class="logo-sub">Taxation &amp; Financial Advisory</div>
+          </div>
+        </a>
+        <p>Precision-led advisory for India's most ambitious businesses and discerning individuals.</p>
+        <p style="margin-top:0.75rem;font-size:0.75rem;color:rgba(255,255,255,0.25);">ICAI Reg. No. 000000W<br>GSTIN: 24AAAAA0000A1Z5</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#services">Income Tax Advisory</a>
+        <a href="#services">GST Advisory</a>
+        <a href="#services">M&amp;A Taxation</a>
+        <a href="#services">International Tax</a>
+        <a href="#" onclick="openModal();return false;">Book Consultation</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#about">About Us</a>
+        <a href="#insights">Insights &amp; Articles</a>
+        <a href="#testimonials">Client Stories</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h5>Clients</h5>
+        <a href="#industries">Startups &amp; Founders</a>
+        <a href="#industries">NRIs</a>
+        <a href="#industries">Corporates</a>
+        <a href="#industries">HNIs</a>
+        <a href="#industries">International Business</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Khushi Consultancy. All rights reserved.</div>
+      <div>Privacy Policy &nbsp;·&nbsp; Terms of Use &nbsp;·&nbsp; Disclaimer</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// MOBILE MENU
+function openMobile(){
+  var menu=document.getElementById('mobileMenu');
+  menu.classList.add('open');
+  document.querySelector('.hamburger').setAttribute('aria-expanded','true');
+}
+function closeMobile(){
+  var menu=document.getElementById('mobileMenu');
+  menu.classList.remove('open');
+  document.querySelector('.hamburger').setAttribute('aria-expanded','false');
+}
+
+// BOOKING MODAL
+function openModal(){
+  document.getElementById('bookingModal').classList.add('open');
+  document.body.style.overflow='hidden';
+  if(!document.getElementById('slotGrid').children.length) buildSlots();
+}
+function closeModal(){
+  document.getElementById('bookingModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function buildSlots(){
+  var grid=document.getElementById('slotGrid');
+  var slots=['9:30 AM','10:30 AM','11:30 AM','2:00 PM','3:00 PM','4:30 PM'];
+  slots.forEach(function(s){
+    var b=document.createElement('button');
+    b.className='slot-btn';
+    b.textContent=s;
+    b.setAttribute('aria-label','Book slot at '+s);
+    b.onclick=function(){
+      document.querySelectorAll('.slot-btn').forEach(function(x){x.classList.remove('selected');});
+      this.classList.add('selected');
+    };
+    grid.appendChild(b);
+  });
+}
+
+function confirmBooking(){
+  var name=document.getElementById('bk-name').value.trim();
+  var email=document.getElementById('bk-email').value.trim();
+  if(!name||!email){alert('Please enter your name and email to proceed.');return;}
+  var btn=document.querySelector('#bookingModal .btn-submit');
+  btn.textContent='Booking Confirmed ✓';
+  btn.style.background='#2E7D32';
+  document.getElementById('bookingSuccess').style.display='block';
+  setTimeout(function(){closeModal();btn.textContent='Confirm Booking →';btn.style.background='';document.getElementById('bookingSuccess').style.display='none';},3000);
+}
+
+function submitContact(){
+  var email=document.getElementById('c-email').value.trim();
+  if(!email){alert('Please enter your email address.');return;}
+  var btn=document.querySelector('#contact .btn-submit');
+  btn.textContent='Message Sent ✓';
+  btn.style.background='#2E7D32';
+  document.getElementById('contactSuccess').style.display='block';
+  setTimeout(function(){btn.textContent='Send Message →';btn.style.background='';document.getElementById('contactSuccess').style.display='none';},4000);
+}
+
+// Close modal on backdrop click
+document.getElementById('bookingModal').addEventListener('click',function(e){
+  if(e.target===this) closeModal();
+});
+
+// ESC key closes modal
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeModal();
+});
+
+// SCROLL ANIMATIONS
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting) e.target.classList.add('visible');
+  });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(function(el){observer.observe(el);});
+
+// STICKY NAV shadow on scroll
+window.addEventListener('scroll',function(){
+  var nav=document.querySelector('nav');
+  if(window.scrollY>50){nav.style.boxShadow='0 4px 30px rgba(0,0,0,0.3)';}
+  else{nav.style.boxShadow='';}
+});
+</script>
+</body>
+</html>
