@@ -213,6 +213,61 @@ footer{background:#000D1A;padding:3.5rem 0 2rem;}
 }
 
 /* Structured data */
+
+/* ── CHATBOX ── */
+#chat-fab{position:fixed;bottom:28px;right:28px;z-index:3000;width:56px;height:56px;border-radius:50%;background:#C9A84C;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,31,63,0.35);transition:transform 0.2s,background 0.2s;}
+#chat-fab:hover{transform:scale(1.08);background:#E8C97E;}
+#chat-fab svg{width:26px;height:26px;fill:none;stroke:#001F3F;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+#chat-fab .fab-close{display:none;}
+#chat-fab.open .fab-chat{display:none;}
+#chat-fab.open .fab-close{display:block;}
+#chat-fab.open{background:#001F3F;}
+#chat-fab.open svg{stroke:#C9A84C;}
+
+#chat-window{position:fixed;bottom:96px;right:28px;z-index:2999;width:360px;max-width:calc(100vw - 40px);background:#FFFFFF;border-radius:12px;box-shadow:0 12px 48px rgba(0,31,63,0.22);display:flex;flex-direction:column;overflow:hidden;transform:scale(0.92) translateY(16px);transform-origin:bottom right;opacity:0;pointer-events:none;transition:transform 0.25s cubic-bezier(.34,1.56,.64,1),opacity 0.2s;max-height:520px;}
+#chat-window.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all;}
+
+.chat-header{background:#001F3F;padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.chat-header-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#E8C97E);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:#001F3F;flex-shrink:0;}
+.chat-header-info{flex:1;}
+.chat-header-name{font-size:0.88rem;font-weight:600;color:#FFFFFF;line-height:1.2;}
+.chat-header-status{font-size:0.7rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:4px;}
+.chat-header-status::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:#4CAF50;}
+
+.chat-messages{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;}
+.chat-messages::-webkit-scrollbar{width:4px;}
+.chat-messages::-webkit-scrollbar-track{background:transparent;}
+.chat-messages::-webkit-scrollbar-thumb{background:#E2DDD6;border-radius:4px;}
+
+.msg{display:flex;flex-direction:column;max-width:82%;}
+.msg.bot{align-self:flex-start;}
+.msg.user{align-self:flex-end;}
+.msg-bubble{padding:9px 13px;border-radius:12px;font-size:0.83rem;line-height:1.6;}
+.msg.bot .msg-bubble{background:#F8F7F4;color:#3A3A3A;border-bottom-left-radius:3px;}
+.msg.user .msg-bubble{background:#001F3F;color:#FFFFFF;border-bottom-right-radius:3px;}
+.msg-time{font-size:0.65rem;color:#AAAAAA;margin-top:3px;padding:0 2px;}
+.msg.user .msg-time{text-align:right;}
+
+.typing-indicator{display:flex;align-items:center;gap:4px;padding:10px 13px;background:#F8F7F4;border-radius:12px;border-bottom-left-radius:3px;width:fit-content;}
+.typing-indicator span{display:block;width:6px;height:6px;border-radius:50%;background:#C9A84C;animation:typing 1.2s infinite;}
+.typing-indicator span:nth-child(2){animation-delay:0.2s;}
+.typing-indicator span:nth-child(3){animation-delay:0.4s;}
+@keyframes typing{0%,60%,100%{transform:translateY(0);opacity:0.4;}30%{transform:translateY(-5px);opacity:1;}}
+
+.chat-suggestions{padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px;flex-shrink:0;}
+.chat-suggestion{background:#F8F7F4;border:1px solid #E2DDD6;border-radius:16px;padding:5px 11px;font-size:0.73rem;color:#001F3F;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.chat-suggestion:hover{background:#F7EDD8;border-color:#C9A84C;color:#C9A84C;}
+
+.chat-input-row{display:flex;gap:8px;padding:12px 14px;border-top:1px solid #E2DDD6;flex-shrink:0;background:#FFFFFF;}
+#chat-input{flex:1;border:1px solid #E2DDD6;border-radius:20px;padding:8px 14px;font-size:0.83rem;font-family:'Inter',sans-serif;color:#3A3A3A;outline:none;transition:border 0.2s;resize:none;background:#F8F7F4;line-height:1.4;}
+#chat-input:focus{border-color:#C9A84C;background:#FFFFFF;}
+#chat-send{width:36px;height:36px;border-radius:50%;background:#C9A84C;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s;align-self:flex-end;}
+#chat-send:hover{background:#E8C97E;}
+#chat-send svg{width:16px;height:16px;fill:none;stroke:#001F3F;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+#chat-send:disabled{background:#E2DDD6;cursor:not-allowed;}
+#chat-send:disabled svg{stroke:#AAAAAA;}
+
+.chat-footer-note{text-align:center;font-size:0.65rem;color:#AAAAAA;padding:0 14px 10px;flex-shrink:0;}
 </style>
 <script type="application/ld+json">
 {
@@ -787,6 +842,166 @@ window.addEventListener('scroll',function(){
   if(window.scrollY>50){nav.style.boxShadow='0 4px 30px rgba(0,0,0,0.3)';}
   else{nav.style.boxShadow='';}
 });
+</script>
+
+<!-- ── CHATBOX ── -->
+<button id="chat-fab" aria-label="Open chat assistant" onclick="toggleChat()">
+  <svg class="fab-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <svg class="fab-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+
+<div id="chat-window" role="dialog" aria-label="Chat with Khushi Consultancy">
+  <div class="chat-header">
+    <div class="chat-header-avatar">K</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name">Khushi Advisory Assistant</div>
+      <div class="chat-header-status">Online now</div>
+    </div>
+  </div>
+
+  <div class="chat-messages" id="chatMessages"></div>
+
+  <div class="chat-suggestions" id="chatSuggestions">
+    <button class="chat-suggestion" onclick="sendSuggestion(this)">GST registration help</button>
+    <button class="chat-suggestion" onclick="sendSuggestion(this)">NRI tax advisory</button>
+    <button class="chat-suggestion" onclick="sendSuggestion(this)">M&A due diligence</button>
+    <button class="chat-suggestion" onclick="sendSuggestion(this)">Book a consultation</button>
+  </div>
+
+  <div class="chat-input-row">
+    <textarea id="chat-input" rows="1" placeholder="Ask about our services…" onkeydown="handleChatKey(event)" oninput="autoResize(this)"></textarea>
+    <button id="chat-send" onclick="sendChat()" aria-label="Send message">
+      <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+  <div class="chat-footer-note">Powered by AI · For detailed advice, <a href="#contact" style="color:#C9A84C;text-decoration:none;" onclick="toggleChat()">contact our team</a></div>
+</div>
+
+<script>
+var chatOpen=false;
+var chatHistory=[];
+var chatTyping=false;
+
+var SYSTEM_PROMPT="You are a helpful and professional assistant for Khushi Consultancy, a premium taxation and financial advisory firm based in Ahmedabad, India. The firm specialises in Income Tax Advisory, GST Advisory, M&A Taxation, and International Taxation. It serves startups, SMEs, corporates, NRIs, international businesses, and HNIs. Founded in 2010, ICAI registered, with 500+ clients and ₹12B+ in tax savings delivered. You answer visitor questions about services, fees (say fees are discussed in a consultation), eligibility, processes, and general Indian tax topics (GST, income tax, DTAA, FEMA, transfer pricing, etc). Be concise, warm, and professional. Always encourage users to book a consultation or contact the team for specific advice. Never give definitive legal or tax advice — always recommend speaking to a senior advisor. Keep responses under 120 words.";
+
+function toggleChat(){
+  chatOpen=!chatOpen;
+  var fab=document.getElementById('chat-fab');
+  var win=document.getElementById('chat-window');
+  fab.classList.toggle('open',chatOpen);
+  win.classList.toggle('open',chatOpen);
+  if(chatOpen&&chatHistory.length===0){
+    setTimeout(function(){addBotMessage("Hello! 👋 I'm the Khushi Consultancy assistant. How can I help you today? I can answer questions about our tax advisory services, GST, NRI taxation, M&A structuring, or help you book a consultation.");},350);
+  }
+  if(chatOpen) document.getElementById('chat-input').focus();
+}
+
+function handleChatKey(e){
+  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat();}
+}
+
+function autoResize(el){
+  el.style.height='auto';
+  el.style.height=Math.min(el.scrollHeight,100)+'px';
+}
+
+function sendSuggestion(btn){
+  var text=btn.textContent;
+  document.getElementById('chatSuggestions').style.display='none';
+  sendMessage(text);
+}
+
+function sendChat(){
+  var input=document.getElementById('chat-input');
+  var text=input.value.trim();
+  if(!text||chatTyping) return;
+  input.value='';
+  input.style.height='auto';
+  document.getElementById('chatSuggestions').style.display='none';
+  sendMessage(text);
+}
+
+function sendMessage(text){
+  addUserMessage(text);
+  chatHistory.push({role:'user',content:text});
+  document.getElementById('chat-send').disabled=true;
+  chatTyping=true;
+  showTyping();
+  callClaude();
+}
+
+function addUserMessage(text){
+  var msgs=document.getElementById('chatMessages');
+  var div=document.createElement('div');
+  div.className='msg user';
+  div.innerHTML='<div class="msg-bubble">'+escHtml(text)+'</div><div class="msg-time">'+getTime()+'</div>';
+  msgs.appendChild(div);
+  scrollChat();
+}
+
+function addBotMessage(text){
+  var msgs=document.getElementById('chatMessages');
+  var div=document.createElement('div');
+  div.className='msg bot';
+  div.innerHTML='<div class="msg-bubble">'+formatMsg(text)+'</div><div class="msg-time">'+getTime()+'</div>';
+  msgs.appendChild(div);
+  scrollChat();
+}
+
+function showTyping(){
+  var msgs=document.getElementById('chatMessages');
+  var div=document.createElement('div');
+  div.className='msg bot';div.id='typing-msg';
+  div.innerHTML='<div class="typing-indicator"><span></span><span></span><span></span></div>';
+  msgs.appendChild(div);
+  scrollChat();
+}
+
+function removeTyping(){
+  var t=document.getElementById('typing-msg');
+  if(t) t.remove();
+}
+
+function scrollChat(){
+  var msgs=document.getElementById('chatMessages');
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+function escHtml(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function formatMsg(t){return escHtml(t).replace(/\n/g,'<br>');}
+function getTime(){var d=new Date();return d.getHours().toString().padStart(2,'0')+':'+d.getMinutes().toString().padStart(2,'0');}
+
+async function callClaude(){
+  try{
+    var messages=chatHistory.slice(-10);
+    var res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-6',
+        max_tokens:1000,
+        system:SYSTEM_PROMPT,
+        messages:messages
+      })
+    });
+    var data=await res.json();
+    removeTyping();
+    var reply='';
+    if(data.content&&data.content.length>0){
+      reply=data.content.map(function(b){return b.type==='text'?b.text:'';}).join('');
+    } else {
+      reply="I'm having a moment of difficulty. Please try again or contact our team directly at advisory@khushiconsultancy.in.";
+    }
+    chatHistory.push({role:'assistant',content:reply});
+    addBotMessage(reply);
+  } catch(err){
+    removeTyping();
+    addBotMessage("Sorry, I couldn't connect right now. Please reach us at advisory@khushiconsultancy.in or call +91 79 2680 5000.");
+  }
+  chatTyping=false;
+  document.getElementById('chat-send').disabled=false;
+  document.getElementById('chat-input').focus();
+}
 </script>
 </body>
 </html>
